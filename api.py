@@ -52,7 +52,7 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return {"status": "online", "message": "API do Gerenciador de Queries está no ar!"}
 
 @app.route('/api/cards', methods=['GET', 'POST'])
 def handle_cards():
@@ -115,4 +115,5 @@ def delete_card(card_id):
 # -----------------------------------------------------------------------------
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
+
 
