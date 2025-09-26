@@ -48,7 +48,7 @@ class QueryCard(db.Model):
             'obs': self.observacao,
             'query': self.query_sql
         }
--
+
 
 # Cria as tabelas no banco de dados, se não existirem
 with app.app_context():
@@ -125,3 +125,4 @@ def delete_card(card_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
+
