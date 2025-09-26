@@ -26,7 +26,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 #  CONFIGURAÇÃO DA API GEMINI
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("AIzaSyCl6aPkzsCErHF-5tpMzMLbh5iPwCaqtpM")
 if not GEMINI_API_KEY:
     print("AVISO: A variável de ambiente GEMINI_API_KEY não foi definida.")
 else:
@@ -94,7 +94,7 @@ def analisar_query():
         if not query_para_analisar:
             abort(400, description="Nenhuma query foi fornecida para análise.")
 
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-pro')
         
         prompt = f"""
         Você é um especialista em SQL. Analise a query abaixo e explique o que ela faz em um parágrafo claro e conciso, e depois liste o que cada função principal faz.
@@ -125,5 +125,6 @@ def delete_card(card_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
+
 
 
