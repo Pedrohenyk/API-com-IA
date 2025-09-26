@@ -26,7 +26,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 #  CONFIGURAÇÃO DA API GEMINI
-GEMINI_API_KEY = os.getenv("AIzaSyCl6aPkzsCErHF-5tpMzMLbh5iPwCaqtpM")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
     print("AVISO: A variável de ambiente GEMINI_API_KEY não foi definida.")
 else:
@@ -125,6 +125,7 @@ def delete_card(card_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
+
 
 
 
